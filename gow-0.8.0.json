@@ -15,6 +15,9 @@
 		# create etc directory (required by bash), if needed
 		if (! (test-path \"$dir\\etc\")) { new-item -itemtype directory \"$dir\\etc\" }
 	",
+	"env_set": {
+		"HOME": "$env:USERPROFILE"
+	},
 	"bin": [
 		"bin\\awk.exe",
 		"bin\\basename.exe",
