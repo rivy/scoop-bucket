@@ -13,8 +13,11 @@
 		}
 	},
 	"post_install":"
-[byte[]][char[]]((Get-Content -raw $dir\portable.perl) -replace "(?ms)^HomeDir:.*?^(?=\S)","") | Set-Content $dir\portable.perl -encoding byte
-",
+		# enable idiomatic access to user's home directory
+		## remove HomeDir section from portable.perl (disables Portable.pm override of File::HomeDir)
+		## NOTE: conversion to byte[] (via char[]) avoids adding an extra trailing newline to the output file
+		[byte[]][char[]]((Get-Content -raw $dir\\portable.perl) -replace \"(?ms)^HomeDir:.*?^(?=\\S)\",\"\") | Set-Content $dir\\portable.perl -encoding byte
+	",
 	"env_add_path": [ "perl\\site\\bin", "perl\\bin", "c\\bin" ],
 	"checkver": "<b>Recommended version:</b></p>\\s*<a[^>]*><b>Strawberry Perl ([0-9\\.]+) \\(32bit\\)</b>"
 }
