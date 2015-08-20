@@ -1,0 +1,19 @@
+{
+	"homepage": "http://gpg4usb.org",
+	"version": "0.3.3-1",
+	"license": "GPLv3",
+    "url": "http://gpg4usb.org/gpg4usb-0.3.3-1.zip",
+    "hash": "7bb0998202ccba5205714f34465a8596a7a5ad7d0a6cdcefa1446d0fcc213494",
+	"post_install":"
+		# set $env:GnuPGHOME, if not already set
+        # use '$env:USERPROFILE\\.gnupg', if exists, otherwise use '.\\keydb'
+        # add to env_set as 'GnuPGHOME=$env:GnuPGHOME'? what about removal? on uninstall? remove only if points to within installation?
+	",
+    "env_set": {
+        "GnuPGHOME": "$env:USERPROFILE\\.gnupg"
+    },
+	"checkver": {
+        "url": "http://gpg4usb.org/download.html",
+        "re": "You can get our latest Release v([0-9\\.-]+)"
+    }
+}
