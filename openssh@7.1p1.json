@@ -1,0 +1,28 @@
+{
+    "version": "7.1p1",
+    "license": "https://github.com/PowerShell/Win32-OpenSSH/blob/L1/LICENCE",
+    "url": [
+        "https://github.com/PowerShell/Win32-OpenSSH/releases/download/12_22_2015/OpenSSH-Win32.zip"
+    ],
+    "hash": [
+        "ac16277778b3b2f248ad8d5517aa1f0f0391b5f8725a285c9450bd317495e8de"
+    ],
+    "bin": [
+        "OpenSSH-Win32\\scp.exe",
+        "OpenSSH-Win32\\sftp.exe",
+        "OpenSSH-Win32\\sftp-server.exe",
+        "OpenSSH-Win32\\ssh-add.exe",
+        "OpenSSH-Win32\\ssh-agent.exe",
+        "OpenSSH-Win32\\ssh-keygen.exe",
+        "OpenSSH-Win32\\ssh-keyscan.exe",
+        "OpenSSH-Win32\\ssh-keysign.exe",
+        "OpenSSH-Win32\\ssh.exe",
+        "OpenSSH-Win32\\ssh-pkcs11-helper.exe"
+    ],
+    "post_install": "
+        # NOTE: with $env:HOME updates to install_app(), this is *no longer needed*
+        if ( ! $(env -t 'user' HOME) ) { env -t 'user' HOME $env:USERPROFILE } # future use; NOTE: $env:HOME is *not* removed with `scoop uninstall openssh...`
+        if ( ! $(env HOME) ) { env HOME $env:USERPROFILE } # current process
+        if ( $env:HOME -ne $env:USERPROFILE ) { warn 'WARN: $env:HOME is not set equal to $env:USERPROFILE' }
+        "
+}
