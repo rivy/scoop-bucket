@@ -8,8 +8,5 @@
         "msys64\\mingw32_shell.bat",
         "msys64\\mingw64_shell.bat",
         "msys64\\msys2_shell.bat"
-    ],
-    "env_set": {
-        "HOME": "$env:USERPROFILE"
-    }
+    ]
 }
