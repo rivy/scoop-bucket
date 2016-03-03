@@ -13,16 +13,21 @@
         "7bb0998202ccba5205714f34465a8596a7a5ad7d0a6cdcefa1446d0fcc213494"
        ,"98ed01efb66b5dc7faf0a34fbb9fb5723e369c7384af22621540db5edef7017b"
         ],
-	"post_install":"
-		# set $env:GnuPGHOME, if not already set
-        # use '$env:USERPROFILE\\.gnupg', if exists, otherwise use '.\\keydb'
-        # add to env_set as 'GnuPGHOME=$env:GnuPGHOME'? what about removal? on uninstall? remove only if points to within installation?
-	",
     "bin": [
         "gpg.exe"
         ],
-    "#env_set": {
-        "GnuPGHOME": "$env:USERPROFILE\\.gnupg"
+    "env_set": {
+        "GnuPGHOME": "$(
+            # USER value, if defined
+            if ($env:GnuPGHOME) { $val = $env:GnuPGHOME } else {
+                # otherwise, 1st existing known default; otherwise, 1st of known defaults
+                $default_dirs = @( \"$env:USERPROFILE\\.gnupg\", \"$env:USERPROFILE\\.keydb\" )
+                $val = @( $($default_dirs |% { get-item $_ -ea silent }), $default_dirs[0] ) | select -first 1
+                # ensure directory exists
+                new-item $val -type directory -force | out-null
+            }
+            $val
+            )"
     },
 	"checkver": {
         "url": "http://gpg4usb.org/download.html",
