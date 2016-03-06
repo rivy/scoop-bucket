@@ -1,6 +1,6 @@
 {
     "homepage": "http://tdm-gcc.tdragon.net/",
-    "version": "5.1.0",
+    "version": "5.1.0-tdm",
     "license": "GPL",
     "url": [
         "http://ufpr.dl.sourceforge.net/project/tdm-gcc/TDM-GCC%205%20series/5.1.0-tdm64-1/gcc-5.1.0-tdm64-1-core.zip"
