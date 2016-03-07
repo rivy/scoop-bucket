@@ -1,6 +1,6 @@
 {
     "homepage": "http://tdm-gcc.tdragon.net/",
-    "version": "5.1.0",
+    "version": "5.1.0-tdm32",
     "license": "GPL",
     "##": "TDM32 (SJLJ version)",
     "##": "BUG: the dw2 core is needed because the loader GPFs, missing the DW2 dll if only the SJLJ code is installed",
