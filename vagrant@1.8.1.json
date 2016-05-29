@@ -9,5 +9,10 @@
     "checkver": {
         "url": "http://www.vagrantup.com/downloads.html",
         "re": "latest\\s+version\\s+of\\s+Vagrant\\s+\\(([^\\)]+)\\)"
-    }
+    },
+    "depends": "curl",
+    "post_install": "
+        # overwrite vagrant copy of `curl`
+        copy-item (scoop which curl) \"$dir\\embedded\\bin\\curl.exe\" | out-null
+        "
 }
