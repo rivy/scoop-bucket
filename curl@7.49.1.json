@@ -1,0 +1,19 @@
+{
+      "homepage": "http://curl.haxx.se/"
+    , "version": "7.49.1"
+    , "licence": "MIT"
+    , "architecture": {
+          "64bit": {
+              "url": "https://bintray.com/artifact/download/vszakats/generic/curl-7.49.1-win64-mingw.7z"
+            , "hash": "742c3ec4ba8a47e8e6ff9a85d2b1ee7819a6bc3bb09a67d531a57b52d3777331"
+            , "extract_dir": "curl-7.49.1-win64-mingw"
+            }
+        , "32bit": {
+              "url": "https://bintray.com/artifact/download/vszakats/generic/curl-7.49.1-win32-mingw.7z"
+            , "hash": "6f9b4d17c8e68286d2bc99fe0236f97ce76f2cd9d2daf5b57ec3c751219650bd"
+            , "extract_dir": "curl-7.49.1-win32-mingw"
+            }
+        }
+    , "bin": "bin/curl.exe"
+    , "checkver": "The most recent stable version is\\s*<b>([0-99\\.]+)"
+}
