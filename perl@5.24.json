@@ -1,0 +1,23 @@
+{
+	"homepage": "http://strawberryperl.com",
+	"version": "5.24.0.1",
+	"license": "GPL",
+	"architecture": {
+		"32bit": {
+			"url": "http://strawberryperl.com/download/5.24.0.1/strawberry-perl-5.24.0.1-32bit-portable.zip",
+			"hash": "sha1:348ec543e765ac57ba299ed94f3a4205c45c0915"
+		},
+		"64bit": {
+			"url": "http://strawberryperl.com/download/5.24.0.1/strawberry-perl-5.24.0.1-64bit-portable.zip",
+			"hash": "sha1:40094b93fdab1057598e9474767d34e810a1c383"
+		}
+	},
+	"post_install":"
+		# enable idiomatic access to user's home directory
+		## remove HomeDir section from portable.perl (disables Portable.pm override of File::HomeDir)
+		## NOTE: conversion to byte[] (via char[]) avoids adding an extra trailing newline to the output file
+		[byte[]][char[]]((Get-Content -raw $dir\\portable.perl) -replace \"(?ms)^HomeDir:.*?^(?=\\S)\",\"\") | Set-Content $dir\\portable.perl -encoding byte
+	",
+	"env_add_path": [ "perl\\site\\bin", "perl\\bin", "c\\bin" ],
+	"checkver": "<b>Recommended version:</b></p>\\s*<a[^>]*><b>Strawberry Perl ([0-9\\.]+) \\(32bit\\)</b>"
+}
