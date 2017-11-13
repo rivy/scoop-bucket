@@ -1,15 +1,15 @@
 {
 	"homepage": "http://strawberryperl.com",
-	"version": "5.20.3.3",
+	"version": "5.24.0.1-PDL",
 	"license": "GPL",
 	"architecture": {
         "64bit": {
-            "url": "http://strawberryperl.com/download/5.20.3.3/strawberry-perl-5.20.3.3-64bit-portable.zip",
-            "hash": "sha1:b13a0e3000b3ea4ed6137a6279274c4aa09d1f46"
+            "url": "http://strawberryperl.com/download/5.24.0.1/strawberry-perl-5.24.0.1-64bit-PDL.zip",
+            "hash": "sha1:65469f7b659dff2bd86dde7fa3744563977d4a60"
         },
 		"32bit": {
-			"url": "http://strawberryperl.com/download/5.20.3.3/strawberry-perl-5.20.3.3-32bit-portable.zip",
-			"hash": "sha1:9a3220a21260339ac6054a8fee4592a00b41e265"
+			"url": "http://strawberryperl.com/download/5.24.0.1/strawberry-perl-5.24.0.1-32bit-PDL.zip",
+			"hash": "sha1:57bf7e57c5dddd841255db25c8eb128eba405e76"
 		}
 	},
 	"post_install":"
