@@ -1,15 +1,15 @@
 {
 	"homepage": "http://strawberryperl.com",
-	"version": "5.20.3.3-PDL",
+	"version": "5.26.1.1+PDL",
 	"license": "GPL",
 	"architecture": {
         "64bit": {
-            "url": "http://strawberryperl.com/download/5.20.3.3/strawberry-perl-5.20.3.3-64bit-PDL.zip",
-            "hash": "sha1:9319e70d1d9bf02d8216737934cf28fb8384c7ed"
+            "url": "http://strawberryperl.com/download/5.26.1.1/strawberry-perl-5.26.1.1-64bit-PDL.zip",
+            "hash": "sha1:563df9c667aef16890f26f0c01dae6fa38abd2dc"
         },
 		"32bit": {
-			"url": "http://strawberryperl.com/download/5.20.3.3/strawberry-perl-5.20.3.3-32bit-PDL.zip",
-			"hash": "sha1:de0141d2a36dcee0da7c56961ae4254780e512b9"
+			"url": "http://strawberryperl.com/download/5.26.1.1/strawberry-perl-5.26.1.1-32bit-PDL.zip",
+			"hash": "sha1:1df01acfc294e59b1c9e9353c5ff0258a6d40382"
 		}
 	},
 	"post_install":"
@@ -19,5 +19,4 @@
 		[byte[]][char[]]((Get-Content -raw $dir\\portable.perl) -replace \"(?ms)^HomeDir:.*?^(?=\\S)\",\"\") | Set-Content $dir\\portable.perl -encoding byte
 	",
 	"env_add_path": [ "perl\\site\\bin", "perl\\bin", "c\\bin" ],
-	"checkver": "<b>Recommended version:</b></p>\\s*<a[^>]*><b>Strawberry Perl ([0-9\\.]+) \\(32bit\\)</b>"
 }

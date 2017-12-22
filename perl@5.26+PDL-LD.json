@@ -1,16 +1,12 @@
 {
 	"homepage": "http://strawberryperl.com",
-	"version": "5.24.0.1-PDL",
+	"version": "5.26.1.1+PDL-LD",
 	"license": "GPL",
 	"architecture": {
         "64bit": {
-            "url": "http://strawberryperl.com/download/5.24.0.1/strawberry-perl-5.24.0.1-64bit-PDL.zip",
-            "hash": "sha1:65469f7b659dff2bd86dde7fa3744563977d4a60"
-        },
-		"32bit": {
-			"url": "http://strawberryperl.com/download/5.24.0.1/strawberry-perl-5.24.0.1-32bit-PDL.zip",
-			"hash": "sha1:57bf7e57c5dddd841255db25c8eb128eba405e76"
-		}
+            "url": "http://strawberryperl.com/download/5.26.1.1/strawberry-perl-ld-5.26.1.1-64bit-PDL.zip",
+            "hash": "sha1:2ee3055de66fd142f57300b20919d42b15828d97"
+        }
 	},
 	"post_install":"
 		# enable idiomatic access to user's home directory
@@ -19,5 +15,4 @@
 		[byte[]][char[]]((Get-Content -raw $dir\\portable.perl) -replace \"(?ms)^HomeDir:.*?^(?=\\S)\",\"\") | Set-Content $dir\\portable.perl -encoding byte
 	",
 	"env_add_path": [ "perl\\site\\bin", "perl\\bin", "c\\bin" ],
-	"checkver": "<b>Recommended version:</b></p>\\s*<a[^>]*><b>Strawberry Perl ([0-9\\.]+) \\(32bit\\)</b>"
 }
