@@ -21,8 +21,14 @@
         "bin"
     ],
     "post_install": "
-# Set npm prefix to install modules inside bin
-Set-Content -Value \"prefix=$dir\\bin\" -Path $dir\\node_modules\\npm\\npmrc",
+# Remove npmrc that makes global modules get installed in AppData\\Roaming\\npm
+$path = $dir.ToString() + '\\nodejs\\node_modules\\npm\\npmrc'
+# echo $('path = ' + $path)
+if (test-path $path) {
+    echo $('removing ' + $path)
+    rm $path
+    }
+npm update -g",
     "checkver": {
         "url": "https://nodejs.org/en/download/current/",
         "re": "Current version: <strong>v([\\d.]+)</strong>"

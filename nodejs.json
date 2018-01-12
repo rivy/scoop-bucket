@@ -1,39 +1,49 @@
 {
-    "homepage": "http://nodejs.org",
-    "version": "7.10.0",
+    "homepage": "https://nodejs.org",
+    "version": "9.4.0",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v7.10.0/node-v7.10.0-x64.msi",
-            "hash": "24a9170bab2f9f0afd54b1ca019f249cf30308d682151eb23dca3918dc6afff6"
+            "url": "https://nodejs.org/dist/v9.4.0/node-v9.4.0-win-x64.7z",
+            "hash": "7ae0a1667ac3a71579785b93978c0f6b1996af2b9a9f09fa1b14e2019848824f",
+            "extract_dir": "node-v9.4.0-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v7.10.0/node-v7.10.0-x86.msi",
-            "hash": "17c036e4bd4698efeb771d81f21624bdc6ab907aa4a8584ad0e801a057eb4cee"
+            "url": "https://nodejs.org/dist/v9.4.0/node-v9.4.0-win-x86.7z",
+            "hash": "38afcac73b8d8fa21724a68e7839bdb48b8cb7fcec409c09e042ce0ef41a675c",
+            "extract_dir": "node-v9.4.0-win-x86"
         }
     },
-    "extract_dir": "nodejs",
     "persist": [
-        "bin"
+        "bin",
+        "cache"
     ],
     "env_add_path": [
         ".",
         "bin"
     ],
     "post_install": "
-# Set npm prefix to install modules inside bin
-Set-Content -Value \"prefix=$dir\\bin\" -Path $dir\\node_modules\\npm\\npmrc",
+# Remove npmrc that makes global modules get installed in AppData\\Roaming\\npm
+$path = $dir.ToString() + '\\nodejs\\node_modules\\npm\\npmrc'
+# echo $('path = ' + $path)
+if (test-path $path) {
+    echo $('removing ' + $path)
+    rm $path
+    }
+npm update -g",
     "checkver": {
-        "url": "https://nodejs.org/en/download/current/",
-        "re": "Current version: <strong>v([\\d.]+)</strong>"
+        "url": "https://nodejs.org/dist/latest/",
+        "re": "node-v([\\d.]+)-x86.msi"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://nodejs.org/dist/v$version/node-v$version-x64.msi"
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x64.7z",
+                "extract_dir": "node-v$version-win-x64"
             },
             "32bit": {
-                "url": "https://nodejs.org/dist/v$version/node-v$version-x86.msi"
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x86.7z",
+                "extract_dir": "node-v$version-win-x86"
             }
         },
         "hash": {
