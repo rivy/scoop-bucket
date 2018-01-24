@@ -1,9 +1,9 @@
 {
     "homepage": "http://msys2.github.io",
     "##":"64-bit version (able to build both 32-bit and 64-bit packages)",
-    "version": "2015.09.16",
-    "url":  "http://ufpr.dl.sourceforge.net/project/msys2/Base/x86_64/msys2-base-x86_64-20150916.tar.xz",
-    "hash": "1eac63be7bfff979846dfda0aef6e2b572bc526450586de6364b08aaf642b843",
+    "version": "20150916",
+    "url":  "http://repo.msys2.org/distrib/x86_64/msys2-base-x86_64-20150916.tar.xz",
+    "hash": "sha256:1eac63be7bfff979846dfda0aef6e2b572bc526450586de6364b08aaf642b843",
     "bin": [
         "msys64\\mingw32_shell.bat",
         "msys64\\mingw64_shell.bat",
