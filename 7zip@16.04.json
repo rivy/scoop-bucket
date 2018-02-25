@@ -13,7 +13,7 @@
         }
     },
     "extract_dir": "Files/7-Zip",
-    "bin": "7z.exe",
+    "bin": [ "7z.exe", "7zFM.exe" ],
     "checkver": "Download 7-zip ([^\\ ]+)",
     "autoupdate": {
         "architecture": {
