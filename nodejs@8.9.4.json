@@ -1,0 +1,53 @@
+{
+    "homepage": "https://nodejs.org",
+    "version": "8.9.4",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://nodejs.org/dist/v8.9.4/node-v8.9.4-win-x64.7z",
+            "hash": "15a847a28358f9ae40bae42f49b033b0180bc10661632c63a9c8487ae980a8ba",
+            "extract_dir": "node-v8.9.4-win-x64"
+        },
+        "32bit": {
+            "url": "https://nodejs.org/dist/v8.9.4/node-v8.9.4-win-x86.7z",
+            "hash": "50ad674fb4c89edf35d3fee2136da86631cb7c0504589eb71ce8a3bb176493ed",
+            "extract_dir": "node-v8.9.4-win-x86"
+        }
+    },
+    "persist": [
+        "bin",
+        "cache"
+    ],
+    "env_add_path": [
+        ".",
+        "bin"
+    ],
+    "post_install": "
+# Remove npmrc that makes global modules get installed in AppData\\Roaming\\npm
+$path = $dir.ToString() + '\\nodejs\\node_modules\\npm\\npmrc'
+# echo $('path = ' + $path)
+if (test-path $path) {
+    echo $('removing ' + $path)
+    rm $path
+    }
+npm update -g",
+    "checkver": {
+        "url": "https://nodejs.org/en/download/",
+        "re": "LTS Version: <strong>([\\d.]+)</strong>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x64.7z",
+                "extract_dir": "node-v$version-win-x64"
+            },
+            "32bit": {
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x86.7z",
+                "extract_dir": "node-v$version-win-x86"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHASUMS256.txt.asc"
+        }
+    }
+}
