@@ -1,0 +1,8 @@
+{
+	"homepage": "http://strawberryperl.com",
+	"version": "5.8.8.4",
+	"license": "GPL",
+    "url": "http://strawberryperl.com/download/5.8.8/strawberry-perl-5.8.8.4.zip",
+    "hash": "sha256:7414dddc7004e441e846ebbfb319986ccf55eba33c5293d735c4d83aea80c6f8",
+	"env_add_path": [ "perl\\site\\bin", "perl\\bin", "c\\bin" ],
+}
