@@ -1,25 +1,49 @@
 {
-    "homepage": "https://www.itefix.net/cwrsync",
-    "version": "5.7.2",
-    "license": "https://www.itefix.net/content/cwrsync-licenseversion",
-    "url": "https://www.itefix.net/dl/cwrsync_5.7.2_x86_free.zip",
-    "hash": "sha256:c61258fe6d1ab9af7b0a45fb166b0c69ee13bdf971d4a3b486b8d1e33425fcf5",
-    "extract_dir": "cwrsync_5.7.2_x86_free",
-    "bin": "bin\\rsync.exe",
+    "homepage": "https://git-for-windows.github.io/",
+    "license": "GPL2",
+    "version": "3.1.3",
+    "##": "ref: <https://blog.tiger-workshop.com/add-rsync-to-git-bash-for-windows> @@ <https://archive.is/WJCrw>",
+    "##": "ref: <https://serverfault.com/a/872557/24273> @@ <https://archive.is/rAfUl#20%>",
+    "architecture": {
+        "64bit": {
+            "url": [
+                // "scp://admin@4532cm.houseofivy.net:42202/share/Archive/%23scoop.feed/MinGit-2.17.0-busybox-64-bit.runtime-min.zip",
+                "https://github.com/git-for-windows/git/releases/download/v2.17.0.windows.1/MinGit-2.17.0-busybox-64-bit.zip",
+                "http://repo.msys2.org/msys/x86_64/libiconv-1.15-1-x86_64.pkg.tar.xz",
+                "http://repo.msys2.org/msys/x86_64/openssh-7.6p1-2-x86_64.pkg.tar.xz",
+                "http://repo.msys2.org/msys/x86_64/rsync-3.1.3-1-x86_64.pkg.tar.xz"
+                ],
+            "hash": [
+                // "sha256:2c39050ac2bb5f0c68135f77d6e817342c6b3c8f389785420bb2076748031777",
+                "sha256:6f4599f367f784087e96f5c7689b2807718d7f75296e2beb4280a0fc2fdfdc1c",
+                "sha256:992219dc1476c352cafe9a842835a4a5492e8f896f07e996cc50e5435e0c3c5e",
+                "sha256:7c99caa5d676aa82ee2d30d8bc0c8d5d9f5ff4ca714fd46a9c092ce29fd9cd23",
+                "sha256:c397eba60b48227277c8da49f7fabbe9e6af20ee1e68b402e296e672b7a52a6a"
+                ]
+        },
+        "32bit": {
+            "url": [
+                // "scp://admin@4532cm.houseofivy.net:42202/share/Archive/%23scoop.feed/MinGit-2.17.0-busybox-32-bit.runtime-min.zip",
+                "https://github.com/git-for-windows/git/releases/download/v2.17.0.windows.1/MinGit-2.17.0-busybox-32-bit.zip",
+                "http://repo.msys2.org/msys/i686/libiconv-1.15-1-i686.pkg.tar.xz",
+                "http://repo.msys2.org/msys/i686/openssh-7.6p1-2-i686.pkg.tar.xz",
+                "http://repo.msys2.org/msys/i686/rsync-3.1.3-1-i686.pkg.tar.xz"
+                ],
+            "hash": [
+                // "sha256:32dba8b3a78cabcbb488b684769b5bbd0713a4b424677178f964b1a6a4798276",
+                "sha256:3ded3fc7245fd026cab3ef05e9cc867c138e3e858aea42f68369a0e0aad1067f",
+                "sha256:ca5b806b11c804d4465d4b0670ddb1cf1a43b82d84c38d3f8374d36124bb0544",
+                "sha256:b519f921d447794cdbcacd18a966d0923bace2f65c9aa89433924b48a9bb86df",
+                "sha256:e7a7e21a8c894eba97365265beb0e90a42d31109514f74a0a28d22299c856cbf"
+                ]
+        }
+    },
     "##": "ref: <https://zsoltfabok.com/blog/2017/03/windows-rsync> @@ <https://archive.is/D8i3C>",
     "env_set": {
-        "RSYNC_RSH": "$dir/bin/ssh.exe -F $env:HOME/.ssh/config -i $env:HOME/.ssh/id_rsa -o UserKnownHostsFile=$env:HOME/.ssh/known_hosts"
+        //"RSYNC_RSH": "$dir/usr/bin/ssh.exe -F $env:HOME/.ssh/config -i $env:HOME/.ssh/id_rsa -o UserKnownHostsFile=$env:HOME/.ssh/known_hosts",
+        "RSYNC_RSH": "$dir/usr/bin/ssh.exe",
+        "RSYNC_SSH": "$dir/usr/bin/ssh.exe"
     },
-    "checkver": {
-        "url": "https://www.itefix.net/content/cwrsync-free-edition",
-        "re": "cwRsync_([\\d.]+)_x86"
-    },
-    "autoupdate": {
-        "url": "https://www.itefix.net/dl/cwrsync_$version_x86_free.zip",
-        "extract_dir": "cwrsync_$version_x86_Free",
-        "hash": {
-            "find": "SHA256:\\s+([a-fA-F0-9]{64})",
-            "url": "https://www.itefix.net/content/cwrsync-free-edition"
-        }
-    }
+    "bin": "usr\\bin\\rsync.exe",
+    "notes": "NOTE: local paths with a leading '/' or internal ':' must instead be in Cygwin cygpath format (eg, '/c/...')"
 }
