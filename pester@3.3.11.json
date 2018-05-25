@@ -7,7 +7,7 @@
     "extract_dir": "pester-3.3.11",
     "bin": "bin\\pester.bat",
     "post_install": "
-        $import = \"try { `$null = gcm pester -ea stop; import-module `\"$dir\\pester.psm1`\" } catch { }\"
+        $import = \"try { `$null = gcm pester -ea stop; import-module `\"`$(`$(scoop which pester)+'\\..\\..\\Pester.psd1')`\" } catch { }\"
 
         if($profile) {
             'adding pester to powershell profile...'

@@ -1,10 +1,11 @@
 {
-    "version":  "3.3.14",
-    "license":  "https://raw.githubusercontent.com/pester/Pester/master/LICENSE",
-    "url":  "https://github.com/pester/pester/archive/3.3.14.tar.gz",
-    "homepage":  "https://github.com/pester/Pester",
-    "hash":  "5ed387f0566dc92ddd57aed56966e5bda31d59de1dfac79414e66a2a4be0a069",
-    "extract_dir": "pester-3.3.14",
+    "description": "Pester is a test and mock framework for PowerShell.",
+    "version": "4.3.1",
+    "license": "Apache-2.0",
+    "url": "https://github.com/pester/pester/archive/4.3.1.tar.gz",
+    "homepage": "https://github.com/pester/Pester",
+    "hash": "34cabbfb33d46f9a91386308a3b86023af602845980b6c8507979db5c29214d0",
+    "extract_dir": "pester-4.3.1",
     "bin": "bin\\pester.bat",
     "post_install": "
         $import = \"try { `$null = gcm pester -ea stop; import-module `\"`$(`$(scoop which pester)+'\\..\\..\\Pester.psd1')`\" } catch { }\"
@@ -28,5 +29,10 @@
 
         'importing pester for current session...'
         iex \"$import\"
-    "
+    ",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/pester/pester/archive/$version.tar.gz",
+        "extract_dir": "pester-$version"
+    }
 }
