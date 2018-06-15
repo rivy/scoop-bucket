@@ -1,23 +1,19 @@
 {
     "homepage": "https://nodejs.org",
-    "version": "10.4.0",
+    "version": "8.11.2",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v10.4.0/node-v10.4.0-win-x64.7z",
-            "hash": "bc2b3f8eab380a068810bae58fe28363d32baaf0d5f41ece4fac8091712eb43f",
-            "extract_dir": "node-v10.4.0-win-x64"
+            "url": "https://nodejs.org/dist/v8.11.2/node-v8.11.2-win-x64.7z",
+            "hash": "8bbd03b041f8326aba5ab754e4619eb3322907ddbfd77b93ddbcdaa435533ce0",
+            "extract_dir": "node-v8.11.2-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v10.4.0/node-v10.4.0-win-x86.7z",
-            "hash": "f70d0f8c48fc67e04aadfd3d0a35d24db182fa6b4d2b22415a0fda831f432d93",
-            "extract_dir": "node-v10.4.0-win-x86"
+            "url": "https://nodejs.org/dist/v8.11.2/node-v8.11.2-win-x86.7z",
+            "hash": "03f1bf7a206b8d24f921606ddafd865b5d60bd54e7998fc5d1744cef2e12c443",
+            "extract_dir": "node-v8.11.2-win-x86"
         }
     },
-    "persist": [
-        "bin",
-        "cache"
-    ],
     "env_add_path": [
         ".",
         "bin"
@@ -27,8 +23,8 @@
         "$path = \"$dir\\nodejs\\node_modules\\npm\\npmrc\"; if (test-path $path) { echo $('removing ' + $path); remove-item $path }"
     ],
     "checkver": {
-        "url": "https://nodejs.org/dist/latest/",
-        "re": "node-v([\\d.]+)-x86.msi"
+        "url": "https://nodejs.org/en/download/",
+        "re": "LTS Version: <strong>([\\d.]+)</strong>"
     },
     "autoupdate": {
         "architecture": {
