@@ -3,10 +3,10 @@
     "version": "5.1.0-tdm",
     "license": "GPL",
     "url": [
-        "http://ufpr.dl.sourceforge.net/project/tdm-gcc/TDM-GCC%205%20series/5.1.0-tdm64-1/gcc-5.1.0-tdm64-1-core.zip"
-       ,"http://ufpr.dl.sourceforge.net/project/tdm-gcc/GNU%20binutils/binutils-2.25-tdm64-1.zip"
-       ,"http://ufpr.dl.sourceforge.net/project/tdm-gcc/MinGW-w64%20runtime/GCC%205%20series/mingw64runtime-v4-git20150618-gcc5-tdm64-1.zip"
-       ,"http://ufpr.dl.sourceforge.net/project/tdm-gcc/TDM-GCC%205%20series/5.1.0-tdm64-1/gcc-5.1.0-tdm64-1-c++.zip"
+        "https://downloads.sourceforge.net/project/tdm-gcc/TDM-GCC%205%20series/5.1.0-tdm64-1/gcc-5.1.0-tdm64-1-core.zip"
+       ,"https://downloads.sourceforge.net/project/tdm-gcc/GNU%20binutils/binutils-2.25-tdm64-1.zip"
+       ,"https://downloads.sourceforge.net/project/tdm-gcc/MinGW-w64%20runtime/GCC%205%20series/mingw64runtime-v4-git20150618-gcc5-tdm64-1.zip"
+       ,"https://downloads.sourceforge.net/project/tdm-gcc/TDM-GCC%205%20series/5.1.0-tdm64-1/gcc-5.1.0-tdm64-1-c++.zip"
     ],
     "hash": [
         "9a21e0833152ec8dcac79150d3f0805b5d59843a4daaa39edd77f207cdd4d2df",
