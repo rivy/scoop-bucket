@@ -1,0 +1,18 @@
+{
+    "homepage": "https://code.visualstudio.com",
+    "version": "latest",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://go.microsoft.com/fwlink/?Linkid=850641#vscode.dl.x64.zip",
+            "##": "(from choco) json info (version, hash, ...) @ <https://vscode-update.azurewebsites.net/api/update/win32-x64/stable/VERSION>",
+            "#hash": "sha256:?"
+        },
+        "32bit": {
+            "url": "https://go.microsoft.com/fwlink/?LinkID=623231#vscode.dl.x32.zip",
+            "##": "(from choco) json info (version, hash, ...) @ <https://vscode-update.azurewebsites.net/api/update/win32/stable/VERSION>",
+            "#hash": "sha256:?"
+        }
+    },
+    "bin": [ [ "Code.exe", "vscode" ] ]
+}
