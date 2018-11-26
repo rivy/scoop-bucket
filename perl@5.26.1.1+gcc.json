@@ -1,15 +1,15 @@
 {
 	"homepage": "http://strawberryperl.com",
-	"version": "5.20.3.3+gcc+PDL",
+	"version": "5.26.1.1+gcc",
 	"license": "GPL",
 	"architecture": {
-        "64bit": {
-            "url": "http://strawberryperl.com/download/5.20.3.3/strawberry-perl-5.20.3.3-64bit-PDL.zip",
-            "hash": "sha1:9319e70d1d9bf02d8216737934cf28fb8384c7ed"
-        },
 		"32bit": {
-			"url": "http://strawberryperl.com/download/5.20.3.3/strawberry-perl-5.20.3.3-32bit-PDL.zip",
-			"hash": "sha1:de0141d2a36dcee0da7c56961ae4254780e512b9"
+			"url": "http://strawberryperl.com/download/5.26.1.1/strawberry-perl-5.26.1.1-64bit-portable.zip",
+			"hash": "sha1:9ec3f82218d586cc3858888c43c390227da61730"
+		},
+		"64bit": {
+			"url": "http://strawberryperl.com/download/5.26.1.1/strawberry-perl-5.26.1.1-32bit-portable.zip",
+			"hash": "sha1:1245124da188c699fb41c4b5a60622bd0d363106"
 		}
 	},
 	"post_install":"
@@ -21,7 +21,6 @@
         # * `pip` (from Perl Installation Program, if present); reserved for Python
         Move-Item \"$dir\\perl\\bin\\pip\" \"$dir\\perl\\bin\\perl-pip\" -ea silent
         Move-Item \"$dir\\perl\\bin\\pip.bat\" \"$dir\\perl\\bin\\perl-pip.bat\" -ea silent
-	    ",
+    	",
 	"env_add_path": [ "perl\\site\\bin", "perl\\bin", "c\\bin" ],
-	"checkver": "<b>Recommended version:</b></p>\\s*<a[^>]*><b>Strawberry Perl ([0-9\\.]+) \\(32bit\\)</b>"
 }

@@ -1,16 +1,16 @@
 {
 	"homepage": "http://strawberryperl.com",
-	"version": "5.20.3.3+gcc+PDL",
+	"version": "5.20.1.1+gcc",
 	"license": "GPL",
 	"architecture": {
-        "64bit": {
-            "url": "http://strawberryperl.com/download/5.20.3.3/strawberry-perl-5.20.3.3-64bit-PDL.zip",
-            "hash": "sha1:9319e70d1d9bf02d8216737934cf28fb8384c7ed"
-        },
-		"32bit": {
-			"url": "http://strawberryperl.com/download/5.20.3.3/strawberry-perl-5.20.3.3-32bit-PDL.zip",
-			"hash": "sha1:de0141d2a36dcee0da7c56961ae4254780e512b9"
-		}
+		"64bit": {
+			"url": "http://strawberryperl.com/download/5.20.1.1/strawberry-perl-5.20.1.1-64bit-portable.zip",
+			"hash": "sha1:844e7c2d741bda915ece0688bf3a00ab12577460"
+		},
+        "32bit": {
+            "url": "http://strawberryperl.com/download/5.20.1.1/strawberry-perl-5.20.1.1-32bit-portable.zip",
+            "hash": "sha1:6929ca3d0b65e514ed73c829f6f648f92cc47b80"
+        }
 	},
 	"post_install":"
 		# enable idiomatic access to user's home directory

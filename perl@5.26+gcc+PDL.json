@@ -1,6 +1,6 @@
 {
 	"homepage": "http://strawberryperl.com",
-	"version": "5.26.1.1+PDL",
+	"version": "5.26.1.1+gcc+PDL",
 	"license": "GPL",
 	"architecture": {
         "64bit": {
@@ -17,6 +17,10 @@
 		## remove HomeDir section from portable.perl (disables Portable.pm override of File::HomeDir)
 		## NOTE: conversion to byte[] (via char[]) avoids adding an extra trailing newline to the output file
 		[byte[]][char[]]((Get-Content -raw $dir\\portable.perl) -replace \"(?ms)^HomeDir:.*?^(?=\\S)\",\"\") | Set-Content $dir\\portable.perl -encoding byte
-	",
+        # rename any clashing executable
+        # * `pip` (from Perl Installation Program, if present); reserved for Python
+        Move-Item \"$dir\\perl\\bin\\pip\" \"$dir\\perl\\bin\\perl-pip\" -ea silent
+        Move-Item \"$dir\\perl\\bin\\pip.bat\" \"$dir\\perl\\bin\\perl-pip.bat\" -ea silent
+    	",
 	"env_add_path": [ "perl\\site\\bin", "perl\\bin", "c\\bin" ],
 }
