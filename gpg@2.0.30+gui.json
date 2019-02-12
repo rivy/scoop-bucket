@@ -1,7 +1,7 @@
 {
-	"homepage": "https://gnupg.org",
-	"version": "2.0.30",
-	"license": "GPLv3",
+    "homepage": "https://gnupg.org",
+    "version": "2.0.30",
+    "license": "GPLv3",
     "url": [
         "https://files.gpg4win.org/gpg4win-2.3.4.exe#/dl.7z"
         ],
@@ -42,7 +42,7 @@
             & cmd @('/c','taskkill /F /T /IM scdaemon.exe 1>NUL 2>NUL')
             "
         },
-	"checkver": {
+    "checkver": {
         "url": "https://www.gpg4win.org/download.html",
         "re": "GnuPG ([0-9\\.-]+)"
         }

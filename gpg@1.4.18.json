@@ -1,7 +1,7 @@
 {
-	"homepage": "http://gpg4usb.org",
-	"version": "0.3.3-1",
-	"license": "GPLv3",
+    "homepage": "http://gpg4usb.org",
+    "version": "0.3.3-1",
+    "license": "GPLv3",
     "url": [
         "http://gpg4usb.org/gpg4usb-0.3.3-1.zip"
        ,"ftp://ftp.gnupg.org/gcrypt/binary/libiconv-1.9.1.dll.zip"
@@ -29,7 +29,7 @@
             $val
             )"
     },
-	"checkver": {
+    "checkver": {
         "url": "http://gpg4usb.org/download.html",
         "re": "You can get our latest Release v([0-9\\.-]+)"
     }

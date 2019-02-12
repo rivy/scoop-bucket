@@ -1,8 +1,8 @@
 {
     "#":"dotnet CLI"
     , "homepage": "https://www.microsoft.com/net/core#windows"
-	, "version": "1.0.0-preview1-002702"
-	, "license": "MIT"
+    , "version": "1.0.0-preview1-002702"
+    , "license": "MIT"
     , "###": "NOTE: for SFTP/SCP, hostname must match within '~/.ssh/known_hosts' (all hosts are listed in *lower case*) to avoid curl failures (such as 'curl: (51) SSL peer certificate or SSH remote key was not OK'"
     , "###": " ...: to test SFTP/SCP operation, use 'curl -O <URI>', which must complete normally"
     , "###": "NOTE: SCP is usually 2-3 times faster than SFTP for downloads"
