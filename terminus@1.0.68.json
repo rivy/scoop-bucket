@@ -1,9 +1,9 @@
 {
     "homepage": "https://eugeny.github.io/terminus",
-    "version": "1.0.71",
+    "version": "1.0.68",
     "license": "MIT",
-    "url": "https://github.com/Eugeny/terminus/releases/download/v1.0.71/terminus-1.0.71-portable.exe#/dl.7z",
-    "hash": "sha256:330e505592bb810bf29fa78d0f70e97f99415fd51caa0da8b6fb6d0e97127657",
+    "url": "https://github.com/Eugeny/terminus/releases/download/v1.0.68/terminus-1.0.68-portable.exe#/dl.7z",
+    "hash": "sha256:336501b4397adf97aa3e0c893cbac60f55a0e94d2664fc5071d676c31c534b99",
     "bin": "Terminus.exe",
     "pre_install": "extract_7zip \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
