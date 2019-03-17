@@ -12,11 +12,11 @@
         "url": "https://win.rustup.rs/#/rustup-init.exe"
     },
     "installer": {
-        "script": "
-            ensure_in_path \"$env:USERPROFILE\\.cargo\\bin\" $global
-            # Install Rustup
-            & \"$dir\\rustup-init.exe\" -y --no-modify-path --default-toolchain stable-gnu
-            "
+        "script": [ ""
+            , "ensure_in_path \"$env:USERPROFILE\\.cargo\\bin\" $global"
+            , "# Install Rustup"
+            , "& \"$dir\\rustup-init.exe\" -y --no-modify-path --default-toolchain stable-gnu"
+        ]
     },
     "uninstaller": {
         "script": "remove_from_path \"$env:USERPROFILE\\.cargo\\bin\" $global"

@@ -7,7 +7,7 @@
             "url": "http://strawberryperl.com/download/5.10.1.1/strawberry-perl-5.10.1.1-portable.zip",
             "hash": "sha256:9da0cc11166e13ce0a9077cb0b42c4909ed849647c094f71aebb2eaf7550bd68",
             // }
-       // },
+        // },
     "post_install": "
         # enable idiomatic access to user's home directory
         ## remove HomeDir section from portable.perl (disables Portable.pm override of File::HomeDir)
