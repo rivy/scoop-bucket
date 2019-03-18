@@ -95,8 +95,8 @@
         }
     },
     "bin": [
-        // "python.exe",
-        // "pythonw.exe",
+        "python.exe",
+        "pythonw.exe",
         [ "python.exe", "python3" ],
         [ "pythonw.exe", "pythonw3" ]
     ],

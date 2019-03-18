@@ -14,6 +14,7 @@
                 "https://www.python.org/ftp/python/3.5.2/amd64/exe.msi",
                 "https://www.python.org/ftp/python/3.5.2/amd64/exe_d.msi",
                 "https://www.python.org/ftp/python/3.5.2/amd64/exe_pdb.msi",
+                "https://www.python.org/ftp/python/3.5.2/amd64/launcher.msi",
                 "https://www.python.org/ftp/python/3.5.2/amd64/lib.msi",
                 "https://www.python.org/ftp/python/3.5.2/amd64/lib_d.msi",
                 "https://www.python.org/ftp/python/3.5.2/amd64/lib_pdb.msi",
@@ -35,6 +36,7 @@
                 "84edf3bb2617f0f9b12ceb6a84a20e1c4659486a77b2e99f5632e805a4fbe430",
                 "848640194435d2f4a6355e7849a5095f72eb3d2945a9a903a5f2c92041f0948d",
                 "dba5c507fabb2b038038ad809e305bf53ea75d5e23ca314ce79aa6beaad7134c",
+                "4b51a509ae5ce5d29c058670fa3828b31b8d4f414addd74b7137560e04e5eb0d",
                 "7e5d5f005ac774ff5ff10b5da50043effd3b02b82f7ebc858f3017abb46b3ba7",
                 "d4b438debe65fb6775e95140cb620d0ba7889146d1a4a3d338484dc5df40a217",
                 "f150660ce484f448bd524dee91a5a81cf6cfd0bcbdeecf23fe280a85cd486633",
@@ -95,29 +97,25 @@
     "bin": [
         // "python.exe",
         // "pythonw.exe",
-        [
-            "python.exe",
-            "python3"
-        ],
-        [
-            "pythonw.exe",
-            "pythonw3"
-        ]
+        [ "python.exe", "python3" ],
+        [ "pythonw.exe", "pythonw3" ]
     ],
-    "post_install": "
-        python3 -m ensurepip
-        ##cp (gcm pip3).path \"$(split-path (gcm pip3).path)/pip.exe\"
-        $create_reg = {
-            param($path, $value)
-            $reg_base = \"Registry::HKEY_CURRENT_USER\\Software\"
-            new-item -path \"$reg_base\\$path\" -force | out-null
-            new-itemproperty -path \"$reg_base\\$path\" `
-                -name \"(Default)\" -value \"$value\" -force | out-null
-        }
-        $create_reg.Invoke(\"Classes\\Python.File\\shell\\open\\command\", \"`\"$dir\\py.exe`\" `\"%1`\" %*\")
-        $create_reg.Invoke(\"Classes\\.py\", \"Python.File\")
-        $create_reg.Invoke(\"Python\\PythonCore\\3.5\\InstallPath\", \"$dir\")
-        $create_reg.Invoke(\"Python\\PythonCore\\3.5\\PythonPath\", \"$dir;$dir\\Lib\\;$dir\\DLLs\\\")",
+    "post_install": [ ""
+        , "python3 -m ensurepip"
+        , "python3 -m pip install --upgrade pip"
+        , "
+            $create_reg = {
+                param($path, $value)
+                $reg_base = \"Registry::HKEY_CURRENT_USER\\Software\"
+                new-item -path \"$reg_base\\$path\" -force | out-null
+                new-itemproperty -path \"$reg_base\\$path\" -name \"(Default)\" -value \"$value\" -force | out-null
+            }
+            $create_reg.Invoke(\"Classes\\Python.File\\shell\\open\\command\", \"`\"$dir\\py.exe`\" `\"%1`\" %*\")
+            $create_reg.Invoke(\"Classes\\.py\", \"Python.File\")
+            $create_reg.Invoke(\"Python\\PythonCore\\3.5\\InstallPath\", \"$dir\")
+            $create_reg.Invoke(\"Python\\PythonCore\\3.5\\PythonPath\", \"$dir;$dir\\Lib\\;$dir\\DLLs\\\")
+        "
+    ],
     "env_add_path": [
         "scripts"
     ],
