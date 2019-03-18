@@ -1,38 +1,45 @@
 {
-    "homepage": "http://www.python.org",
-    "license": "http://docs.python.org/2/license.html",
+    "homepage": "https://conda.io/miniconda.html",
+    "homepage:core": "https://python.org",
+    "license": "BSD 3-Clause",
     "version": "2.7.15",
     "architecture": {
         "64bit": {
-            "url": "https://www.python.org/ftp/python/2.7.15/python-2.7.15.amd64.msi",
-            "hash": "md5:0ffa44a86522f9a37b916b361eebc552"
+            "url": "https://repo.anaconda.com/miniconda/Miniconda2-4.5.12-Windows-x86_64.exe",
+            "hash": "sha256:c1c0e732362ffff726f4f7b3745238bd871f590229300a68427f2fbb6b6ddbfe"
         },
         "32bit": {
-            "url": "https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi",
-            "hash": "md5:023e49c9fba54914ebc05c4662a93ffe"
+            "url": "https://repo.anaconda.com/miniconda/Miniconda2-4.5.12-Windows-x86.exe",
+            "hash": "sha256:cb95bafc8b00c03c0491e8c5aebff5b3fe7ee9b2c6b7201b0c57641430f7ae78"
         }
     },
+    "installer": {
+        "args": [
+            "/S",
+            "/InstallationType=$(@{$true='AllUsers';$false='JustMe'}[$global])",
+            "/AddToPath=0",
+            "/RegisterPython=0",
+            "/D=$dir",
+        ],
+        // "keep": true
+    },
+    // "uninstaller": {
+    //     "file": "Uninstall-Miniconda3.exe",
+    //     "args": [
+    //         "/uninstall",
+    //         "/S",
+    //     ]
+    // },
     "bin": [
-        // "python.exe",
-        // "pythonw.exe",
-        [ "python.exe", "python2" ],
-        [ "pythonw.exe", "pythonw2" ]
+        "python.exe",
+        "pythonw.exe",
+        // [ "python.exe", "python2" ],
+        // [ "pythonw.exe", "pythonw2" ],
+        "Lib\\idlelib\\idle.bat",
+        [ "Lib\\idlelib\\idle.bat", "idle3" ]
     ],
-    "env_add_path": [ "scripts" ],
-    "post_install": [ ""
-        , "python2 -m ensurepip"
-        , "
-            $create_reg = {
-                param($path, $value)
-                $reg_base = \"Registry::HKEY_CURRENT_USER\\Software\"
-                new-item -path \"$reg_base\\$path\" -force | out-null
-                new-itemproperty -path \"$reg_base\\$path\" -name \"(Default)\" -value \"$value\" -force | out-null
-            }
-            $create_reg.Invoke(\"Classes\\Python.File\\shell\\open\\command\", \"`\"$dir\\py.exe`\" `\"%1`\" %*\")
-            $create_reg.Invoke(\"Classes\\.py\", \"Python.File\")
-            $create_reg.Invoke(\"Python\\PythonCore\\2.7\\InstallPath\", \"$dir\")
-            $create_reg.Invoke(\"Python\\PythonCore\\2.7\\PythonPath\", \"$dir;$dir\\Lib\\;$dir\\DLLs\\\")
-        "
-    ],
-    "checkver": "<p>Latest: <a.*>.*</a> - <a href=\".*\">Python ([0-9\\.]+)</a></p>"
+    "env_add_path": [
+        "library/bin",  // must have PATH priority over "scripts" for `conda` to work correctly
+        "scripts"
+    ]
 }
