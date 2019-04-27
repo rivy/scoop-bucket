@@ -2,15 +2,15 @@
     "homepage": "https://conda.io/miniconda.html",
     "homepage:core": "https://python.org",
     "license": "BSD 3-Clause",
-    "version": "3.7.1",
+    "version": "2.7.16",
     "architecture": {
         "64bit": {
-            "url": "https://repo.anaconda.com/miniconda/Miniconda3-4.5.12-Windows-x86_64.exe",
-            "hash": "sha256:39880230ce0bb5f3b414979baf5dd804e1387a5ec3e7ab1ca3d20b800fe83fd4"
+            "url": "https://repo.anaconda.com/miniconda/Miniconda2-4.6.14-Windows-x86_64.exe",
+            "hash": "sha256:0b4c4469c77b352ec69d2f9158d513d7b0427b43468831c12595a37d94eb1672"
         },
         "32bit": {
-            "url": "https://repo.anaconda.com/miniconda/Miniconda3-4.5.12-Windows-x86.exe",
-            "hash": "sha256:ced4ae82d5b95575bf4a54dbc49de945a2851c26f0d8de395ef637ac8cb90810"
+            "url": "https://repo.anaconda.com/miniconda/Miniconda2-4.6.14-Windows-x86.exe",
+            "hash": "sha256:0d3c7a6cf2ede3163a999a9a2c9a350726d1ff6cb24b6adc9ce2b68cddbf323f"
         }
     },
     "installer": {
@@ -33,8 +33,8 @@
     "bin": [
         "python.exe",
         "pythonw.exe",
-        // [ "python.exe", "python3" ],
-        // [ "pythonw.exe", "pythonw3" ],
+        // [ "python.exe", "python2" ],
+        // [ "pythonw.exe", "pythonw2" ],
         "Lib\\idlelib\\idle.bat",
         [ "Lib\\idlelib\\idle.bat", "idle3" ]
     ],
