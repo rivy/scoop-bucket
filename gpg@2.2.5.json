@@ -16,19 +16,21 @@
         , "bin/gpgv.exe"
         , "bin/gpg-connect-agent.exe"
         ],
-    "env_set": {
-        "GnuPGHOME": "$(
-            # USER value, if defined
-            if ($env:GnuPGHOME) { $val = $env:GnuPGHOME } else {
-                # otherwise, 1st existing known default; otherwise, 1st of known defaults
-                $default_dirs = @( \"$env:USERPROFILE\\.gnupg\", \"$env:USERPROFILE\\.keydb\" )
-                $val = @( $($default_dirs |% { get-item $_ -ea silent }), $default_dirs[0] ) | select -first 1
-                # ensure directory exists
-                new-item $val -type directory -force | out-null
-            }
-            $val
-            )"
-    },
+    "pre_install": "
+        # GnuPGHOME
+        # * use 'pre_install' (or 'post_install') instead of 'env_set' so that `scoop` doesn't remove the variable if/when uninstalled
+        # respect USER value, if defined
+        if ($env:GnuPGHOME) { } else {
+            # otherwise, 1st existing known default; otherwise, 1st of known defaults
+            $default_dirs = @( \"$env:USERPROFILE\\.gnupg\", \"$env:USERPROFILE\\.keydb\" )
+            $val = @( $($default_dirs |% { get-item $_ -ea silent }), $default_dirs[0] ) | select -first 1
+            # ensure directory exists
+            new-item $val -type directory -force | out-null
+            # add to environment
+            env GnuPGHOME -t $global $val
+            env GnuPGHOME $val
+        }
+        ",
     "uninstaller": {
         "script": [ ""
             , "# & cmd @('/c','taskkill /F /T /IM gpa.exe 1>NUL 2>NUL')"

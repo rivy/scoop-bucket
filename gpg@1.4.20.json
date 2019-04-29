@@ -1,6 +1,6 @@
 {
     "homepage": "http://gpg4usb.org",
-    "version": "0.3.3-2",
+    "version": "1.4.20-0.3.3-2",
     "license": "GPLv3",
     "url": [
         "http://gpg4usb.org/gpg4usb-0.3.3-2.zip"
@@ -16,19 +16,21 @@
     "bin": [
         "gpg.exe"
         ],
-    "env_set": {
-        "GnuPGHOME": "$(
-            # USER value, if defined
-            if ($env:GnuPGHOME) { $val = $env:GnuPGHOME } else {
-                # otherwise, 1st existing known default; otherwise, 1st of known defaults
-                $default_dirs = @( \"$env:USERPROFILE\\.gnupg\", \"$env:USERPROFILE\\.keydb\" )
-                $val = @( $($default_dirs |% { get-item $_ -ea silent }), $default_dirs[0] ) | select -first 1
-                # ensure directory exists
-                new-item $val -type directory -force | out-null
-            }
-            $val
-            )"
-    },
+    "pre_install": "
+        # GnuPGHOME
+        # * use 'pre_install' (or 'post_install') instead of 'env_set' so that `scoop` doesn't remove the variable if/when uninstalled
+        # respect USER value, if defined
+        if ($env:GnuPGHOME) { } else {
+            # otherwise, 1st existing known default; otherwise, 1st of known defaults
+            $default_dirs = @( \"$env:USERPROFILE\\.gnupg\", \"$env:USERPROFILE\\.keydb\" )
+            $val = @( $($default_dirs |% { get-item $_ -ea silent }), $default_dirs[0] ) | select -first 1
+            # ensure directory exists
+            new-item $val -type directory -force | out-null
+            # add to environment
+            env GnuPGHOME -t $global $val
+            env GnuPGHOME $val
+        }
+        ",
     "checkver": {
         "url": "http://gpg4usb.org/download.html",
         "re": "You can get our latest Release v([0-9\\.-]+)"
