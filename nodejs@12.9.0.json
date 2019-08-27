@@ -1,18 +1,18 @@
 {
     "homepage": "https://nodejs.org",
-    "description": "As an asynchronous event driven JavaScript runtime, Node is designed to build scalable network applications. (Long Term Support)",
-    "version": "10.16.3",
+    "description": "As an asynchronous event driven JavaScript runtime, Node is designed to build scalable network applications.",
+    "version": "12.9.0",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v10.16.3/node-v10.16.3-win-x64.7z",
-            "hash": "c2cc3b95d6e8504b20623cfe74f848d1ebc2f43a262e7bae14bee64db2b13889",
-            "extract_dir": "node-v10.16.3-win-x64"
+            "url": "https://nodejs.org/dist/v12.9.0/node-v12.9.0-win-x64.7z",
+            "hash": "2c25b307d7acbeeb1fb618587ceb6769391a5cfd8ee9be805e1ac5344b9f3a2f",
+            "extract_dir": "node-v12.9.0-win-x64"
         },
         "32bit": {
-            "url": "https://nodejs.org/dist/v10.16.3/node-v10.16.3-win-x86.7z",
-            "hash": "fc1ccb1e6f12fe68e816c552e6b1df289a8bfe064c025eb62c360bd041da4a5f",
-            "extract_dir": "node-v10.16.3-win-x86"
+            "url": "https://nodejs.org/dist/v12.9.0/node-v12.9.0-win-x86.7z",
+            "hash": "87adc248df2b1be102e5025b571849638ac337f595ce6c5dbec3d8cea9d374ce",
+            "extract_dir": "node-v12.9.0-win-x86"
         }
     },
     "persist": [
@@ -41,8 +41,8 @@
         , "$path = \"$dir\\node_modules\\npm\" ; if (test-path $path) { echo $('removing ' + $path); remove-item $path -recurse }"
     ],
     "checkver": {
-        "url": "https://nodejs.org/en/download/",
-        "re": "LTS Version: <strong>([\\d.]+)</strong>"
+        "url": "https://nodejs.org/dist/latest/",
+        "re": "node-v([\\d.]+)-x86.msi"
     },
     "autoupdate": {
         "architecture": {
