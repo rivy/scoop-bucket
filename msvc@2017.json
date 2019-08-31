@@ -1,14 +1,14 @@
 {
-    "#":"MSVC"
+    "#":"MSVC - Build Tools (minimum required build tools for alternate compilers (eg, `rust`); see https://wcarss.ca/log/2018/06/installing-rust-on-windows-in-2018 @@ http://archive.is/USk7Y)"
     , "version": "2017"
     , "license": "Commercial"
     , "###": "NOTE: for SFTP/SCP, hostname must match within '~/.ssh/known_hosts' (all hosts are listed in *lower case*) to avoid curl failures (such as 'curl: (51) SSL peer certificate or SSH remote key was not OK'"
     , "###": " ...: to test SFTP/SCP operation, use 'curl -O <URI>', which must complete normally"
     , "###": "NOTE: SCP is usually 2-3 times faster than SFTP for downloads"
     , "###": "NOTE: some special characters may need to be encoded for curl (eg, change '#' to '%23')"
-    , "url": "scp://admin@4532cm.houseofivy.net:42202/share/Archive/%23scoop.feed/VCBT2017.offline.zip"
-    , "hash": "sha256:0"
-    , "bin": "VCvars.BAT"
+    , "url": "scp://admin@4532cm.houseofivy.net:42202/share/Archive/%23scoop.feed/VC-BuildTools-2017.offline.zip"
+    , "hash": "sha256:1f28fef5e9fbcb2b5b29da7fc5e00b3fcbfb707a92317fcd982b6337c9050957"
+    , "bin": "bin/VCvars.BAT"
     , "installer": {
         "script": "& $dir\\vctools\\vs_setup.exe --passive --noweb"
         }
