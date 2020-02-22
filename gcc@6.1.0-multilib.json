@@ -1,9 +1,9 @@
 {
     "homepage": "https://mingw-w64.org",
-    "version": "9.1.0-multilib",
+    "version": "6.1.0-multilib",
     "license": "GPL-3.0",
-    "url": "https://downloads.sourceforge.net/project/mingw-w64/Multilib%20Toolchains%28Targetting%20Win32%20and%20Win64%29/ray_linn/gcc-9.x-with-ada/x86_64-w64-mingw32-9.1.0-crt-6.0.0-lib32_lib64.7z",
-    "hash": "sha256:fa1a01abfc392b03f3ef9ae0629f52e265c2d91bb115f1ee98f35fb47ec8bc45",
+    "url": "https://downloads.sourceforge.net/project/mingw-w64/Multilib%20Toolchains%28Targetting%20Win32%20and%20Win64%29/ray_linn/gcc-6.X-with-ada/gcc-6.1.0-multilib-mingw-4.0.6-with-ada-201605226.7z",
+    "hash": "sha256:b8d04ba821eb9838d80741124455d4e85b4ca3cf7575d39d8b60cee494f81deb",
     "extract_dir": "mingw64",
     "env_add_path": "bin",
     "post_install": [
