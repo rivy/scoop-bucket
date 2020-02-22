@@ -3,8 +3,8 @@
     "version": "3.81",
     "license": "GPL2",
     "url": [
-        "http://ufpr.dl.sourceforge.net/project/gnuwin32/make/3.81/make-3.81-bin.zip",
-        "http://ufpr.dl.sourceforge.net/project/gnuwin32/make/3.81/make-3.81-dep.zip"
+        "https://downloads.sourceforge.net/project/gnuwin32/make/3.81/make-3.81-bin.zip",
+        "https://downloads.sourceforge.net/project/gnuwin32/make/3.81/make-3.81-dep.zip"
     ],
     "hash": [
         "ca23bc1d9370102878d2a79a31ae70288a1cfa51928667653ffbdc28090f4123",
