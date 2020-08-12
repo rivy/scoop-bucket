@@ -1,8 +1,8 @@
 {
     "homepage": "https://ezwinports.sourceforge.io/",
-    "version": "4.2.1",
+    "version": "4.3",
     "license": "GPLv3",
-    "url": "http://ufpr.dl.sourceforge.net/project/ezwinports/make-4.2.1-without-guile-w32-bin.zip",
-    "hash": "30641be9602712be76212b99df7209f4f8f518ba764cf564262bc9d6e4047cc7",
+    "url": "https://downloads.sourceforge.net/project/ezwinports/make-4.3-without-guile-w32-bin.zip",
+    "hash": "sha256:835f19a24d952b281a27884b8c972ca00da38cf01f7c52226738b58b021f7c4a",
     "bin": "bin/make.exe"
 }
