@@ -1,7 +1,7 @@
 {
+    "version": "2018-05-31",
     "homepage": "http://msys2.github.io",
     "##": "64-bit version is able to build both 32-bit and 64-bit packages",
-    "version": "20180531",
     "architecture": {
         "64bit": {
             "url": "https://downloads.sourceforge.net/project/msys2/Base/x86_64/msys2-base-x86_64-20180531.tar.xz",

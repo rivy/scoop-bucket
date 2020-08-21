@@ -1,7 +1,7 @@
 {
+    "version": "2016-10-25",
     "homepage": "http://msys2.github.io",
     "##":"64-bit version (able to build both 32-bit and 64-bit packages)",
-    "version": "20161025",
     "url":  "http://repo.msys2.org/distrib/x86_64/msys2-base-x86_64-20161025.tar.xz",
     "hash": "sha256:bb1f1a0b35b3d96bf9c15092da8ce969a84a134f7b08811292fbc9d84d48c65d",
     "bin": [
