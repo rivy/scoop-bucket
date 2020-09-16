@@ -12,7 +12,12 @@
         "hash": "9a9a1bc6276739478bd62678099b00e07275bb3562d19d14991b72c6876cdfcc"
       }
     },
-    "bin": "make.exe",
+    "bin": [
+        [ "bin/make.exe", "make", "MAKE=make" ],
+        [ "bin/make.exe", "gmake", "MAKE=gmake" ],
+        [ "bin/make.exe", "gnumake", "MAKE=gnumake" ],
+        [ "bin/make.exe", "gnu-make", "MAKE=gnu-make" ]
+    ],
     "checkver": {
       "url": "http://www.equation.com/servlet/equation.cmd?fa=make",
       "re": "to download 32-bit binary of version ([\\d.]+)"
