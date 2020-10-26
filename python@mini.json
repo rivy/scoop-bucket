@@ -2,15 +2,15 @@
     "homepage": "https://conda.io/miniconda.html",
     "homepage:core": "https://python.org",
     "license": "BSD 3-Clause",
-    "version": "3.7.3",
+    "version": "3.8.3",
     "architecture": {
         "64bit": {
-            "url": "https://repo.anaconda.com/miniconda/Miniconda3-4.6.14-Windows-x86_64.exe",
-            "hash": "sha256:142a80c6420617b2aab65c5c56517275023910dc56049255245714a34e550631"
+            "url": "https://repo.anaconda.com/miniconda/Miniconda3-py38_4.8.3-Windows-x86_64.exe",
+            "hash": "sha256:1f4ff67f051c815b6008f144fdc4c3092af2805301d248b56281c36c1f4333e5"
         },
         "32bit": {
-            "url": "https://repo.anaconda.com/miniconda/Miniconda3-4.6.14-Windows-x86.exe",
-            "hash": "sha256:f886fa1656ecf3b096296c5751c3ba2f229e203702c9127adf4c1dfb81b6bc2e"
+            "url": "https://repo.anaconda.com/miniconda/Miniconda3-py38_4.8.3-Windows-x86.exe",
+            "hash": "sha256:415920293ae005a17afaef4c275bd910b06c07d8adf5e0cbc9c69f0f890df976"
         }
     },
     "installer": {
