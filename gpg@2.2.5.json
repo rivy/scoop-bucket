@@ -9,7 +9,7 @@
         "sha256:9fea4add738a373b3c1a304f74eec2d24a8f5fe7ccdf1d8ee090d99de8f51257"
         ],
     "bin": [
-        "bin/gpg.exe"
+          "bin/gpg.exe"
         , [ "bin/gpg.exe", "gpg2" ]
         , "bin/gpgconf.exe"
         , "bin/gpgsm.exe"
