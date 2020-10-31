@@ -1,15 +1,10 @@
 {
-    "homepage": "https://yarnpkg.com/",
+    "version": "1.22.5",
     "description": "Node.js dependency manager",
-    "version": "1.19.2",
+    "homepage": "https://yarnpkg.com/",
     "license": "BSD-2-Clause",
-    "url": "https://yarnpkg.com/downloads/1.19.2/yarn-1.19.2.msi",
-    "hash": "sha256:66eb081887c000a7e7facfd2c0f1937f118fdb5c69580cf534640754b1d79e86",
-    "persist": [
-        "cache",
-        "mirror",
-        "global"
-    ],
+    "url": "https://yarnpkg.com/downloads/1.22.5/yarn-1.22.5.msi",
+    "hash": "d7c895bc2a28df456d561ce78b8f9367b0b6a27fb5344d532868fe6f62245a60",
     "post_install": [
         "yarn config set cache-folder \"$dir\\cache\"",
         "yarn config set yarn-offline-mirror \"$dir\\mirror\"",
@@ -23,9 +18,14 @@
     "env_set": {
         "NODE_PATH": "$dir\\global\\node_modules"
     },
+    "persist": [
+        "cache",
+        "global",
+        "mirror"
+    ],
     "checkver": {
         "url": "https://yarnpkg.com/latest-version",
-        "re": "([\\d.]+)"
+        "regex": "([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://yarnpkg.com/downloads/$version/yarn-$version.msi"
