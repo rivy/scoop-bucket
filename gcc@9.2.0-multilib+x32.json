@@ -60,23 +60,10 @@
         "addf6c52134027407640f1cbdf4efc5b64430f3a286cb4e4c4f5dbb44ce55a42"
     ],
     "pre_install": [
-        "$f = 'binutils-2.33.1-tdm64-1.tar.xz' ; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'gcc-9.2.0-tdm-1-dw2-libgcc.tar.xz'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'gcc-9.2.0-tdm64-1-c++.tar.xz'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'gcc-9.2.0-tdm64-1-core.tar.xz'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'gdb-8.3.1-tdm64-1.tar.xz'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'libiconv-1.14-4-mingw32-dll-2.tar.xz'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'libintl-0.18.3.2-2-mingw32-dll-8.tar.xz'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'make-3.82.90-2-mingw32-cvs-20120902-bin.tar.lzma'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'make-3.82.90-2-mingw32-cvs-20120902-doc.tar.lzma'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'make-3.82.90-2-mingw32-cvs-20120902-lang.tar.lzma'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'make-3.82.90-2-mingw32-cvs-20120902-lic.tar.lzma'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'mingw64runtime-v7-git20191109-gcc9-tdm64-1.tar.xz'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'",
-        "$f = 'windows-default-manifest-6.4-x86_64_multi.tar.xz'; $d = \"$dir\\`$PLUGINSDIR\\$f\"; Write-Host -NoNewLine \"extracting `\"$f`\"...\"; extract_7zip  \"$d\" \"$dir\" ; Write-Host 'done'"
+        "Get-Item \"$dir\\`$PLUGINSDIR\\*.tar.xz\",\"$dir\\`$PLUGINSDIR\\*.lzma\" |% { $n = $_.name ; $d = \"$dir\\`$PLUGINSDIR\\$n\"; Write-Host -NoNewLine \"extracting `\"$n`\"...\"; extract_7zip \"$d\" \"$dir\" ; Write-Host 'done' ; }"
     ],
     "post_install": [
-        "Remove-Item \"$dir\\`$_19_\" -Recurse",
-        "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse"
+        "Get-Item \"$dir\\`$_19_\",\"$dir\\`$PLUGINSDIR\" |% { $n = $_.name ; Write-Host -NoNewLine \"removing `\"$n`\"...\"; Remove-Item $_ -Recurse ; Write-Host 'done' ; }"
     ],
     "env_add_path": [ "bin", "mingw32/bin" ], // note: order is important (MinGW64 must precede MinGW32 in PATH for correct compiling/linking)
     "#notes": "The 64bit version is built with Structured Exception Handling (SEH), the 32bit is built with DWARF. Both 64bit and 32bit support Posix threading model"
