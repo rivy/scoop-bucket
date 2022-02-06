@@ -1,0 +1,52 @@
+{
+	// v2022.02.06 [rivy]
+	"$schema": "https://dprint.dev/schemas/v0.json",
+	"projectType": "openSource",
+	"incremental": true,
+	"indentWidth": 2,
+	"lineWidth": 100,
+	"useTabs": true,
+	"typescript": {
+		// ref: <https://dprint.dev/plugins/typescript/config>
+		"deno": true,
+		// * customize preferences (overrides of some Deno formatting choices)
+		// ref: <https://github.com/dprint/dprint-plugin-typescript/blob/44b6cf562e511a308f4a7183dc98fb19cdf21d07/src/configuration/builder.rs#L51>
+		// ref: <https://github.com/denoland/deno/blob/f46e39c5c5/cli/tools/fmt.rs#L311>
+		"lineWidth": 100,
+		"preferSingleLine": true,
+		"quoteStyle": "preferSingle",
+		//
+		"ignoreNodeCommentText": "dprint-ignore", // from Deno's "deno-fmt-ignore"
+		"ignoreFileCommentText": "dprint-ignore-file", // from Deno's "deno-fmt-ignore-file"
+		"memberExpression.linePerExpression": true,
+		"memberExpression.preferSingleLine": true,
+		"module.sortImportDeclarations": "caseInsensitive",
+		"module.sortExportDeclarations": "caseInsensitive"
+	},
+	"json": { "preferSingleLine": true },
+	"markdown": { "textWrap": "always", "lineWidth": 99999 },
+	"prettier": { "printWidth": 100, "singleQuote": true, "tabWidth": 2 },
+	"rustfmt": {},
+	"includes": ["**/*.{ts,tsx,js,jsx,cjs,cjx,mjs,mts,mtx,json,jsonc,md,mkd,rs,yaml,yml}"],
+	"excludes": [
+		".history",
+		".coverage",
+		".changelog/*.tpl.*",
+		"CHANGELOG{,.}*",
+		"**/node_modules",
+		"**/*-lock.json",
+		"**/target",
+		"**/vendor"
+	],
+	"plugins": [
+		// ref: <https://plugins.dprint.dev>
+		"https://plugins.dprint.dev/typescript-0.59.0.wasm",
+		"https://plugins.dprint.dev/json-0.13.1.wasm",
+		"https://plugins.dprint.dev/markdown-0.11.2.wasm",
+		"https://plugins.dprint.dev/toml-0.5.2.wasm",
+		// ref: <https://github.com/dprint/dprint-plugin-rustfmt/releases>
+		"https://plugins.dprint.dev/rustfmt-0.4.0.exe-plugin@c6bb223ef6e5e87580177f6461a0ab0554ac9ea6b54f78ea7ae8bf63b14f5bc2",
+		// ref: <https://github.com/dprint/dprint-plugin-prettier/releases>
+		"https://plugins.dprint.dev/prettier-0.3.0.exe-plugin@c6c227493e655717b5f3d9c811ba576c82f2b060317bb233c6ec014958fbee19"
+	]
+}
