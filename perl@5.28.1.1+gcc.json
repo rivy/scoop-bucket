@@ -1,18 +1,18 @@
 {
-    "homepage": "http://strawberryperl.com",
-    "version": "5.28.1.1+gcc",
-    "license": "Artistic-1.0-Perl|GPL-1.0-only",
-    "architecture": {
-        "64bit": {
-            "url": "http://strawberryperl.com/download/5.28.1.1/strawberry-perl-5.28.1.1-64bit-portable.zip",
-            "hash": "sha1:51dbc993d93069190606e2534bd64b9c9bf1b9e3"
-        },
-        "32bit": {
-            "url": "http://strawberryperl.com/download/5.28.1.1/strawberry-perl-5.28.1.1-32bit-portable.zip",
-            "hash": "sha1:241a11fd0c3a51bade0aea222d4c7b7dc623a642"
-        }
-    },
-    "post_install":"
+	"homepage": "http://strawberryperl.com",
+	"version": "5.28.1.1+gcc",
+	"license": "Artistic-1.0-Perl|GPL-1.0-only",
+	"architecture": {
+		"64bit": {
+			"url": "http://strawberryperl.com/download/5.28.1.1/strawberry-perl-5.28.1.1-64bit-portable.zip",
+			"hash": "sha1:51dbc993d93069190606e2534bd64b9c9bf1b9e3"
+		},
+		"32bit": {
+			"url": "http://strawberryperl.com/download/5.28.1.1/strawberry-perl-5.28.1.1-32bit-portable.zip",
+			"hash": "sha1:241a11fd0c3a51bade0aea222d4c7b7dc623a642"
+		}
+	},
+	"post_install": "
         # enable idiomatic access to user's home directory
         ## remove HomeDir section from portable.perl (disables Portable.pm override of File::HomeDir)
         ## NOTE: conversion to byte[] (via char[]) avoids adding an extra trailing newline to the output file
@@ -28,6 +28,6 @@
         Move-Item \"$dir\\perl\\bin\\pip\" \"$dir\\perl\\bin\\perl-pip\" -ea silent
         Move-Item \"$dir\\perl\\bin\\pip.bat\" \"$dir\\perl\\bin\\perl-pip.bat\" -ea silent
         ",
-    "env_add_path": [ "perl\\site\\bin", "perl\\bin", "c\\bin" ],
-    "bin": [ "c\\bin\\dmake.exe", "c\\bin\\gmake.exe" ]
+	"env_add_path": ["perl\\site\\bin", "perl\\bin", "c\\bin"],
+	"bin": ["c\\bin\\dmake.exe", "c\\bin\\gmake.exe"]
 }

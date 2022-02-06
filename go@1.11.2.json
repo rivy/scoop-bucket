@@ -1,9 +1,9 @@
 {
-    "version": "1.11.2",
-    "homepage": "https://golang.org",
-    "license": "https://golang.org/LICENSE",
-    "extract_dir": "go",
-    "pre_install": "
+	"version": "1.11.2",
+	"homepage": "https://golang.org",
+	"license": "https://golang.org/LICENSE",
+	"extract_dir": "go",
+	"pre_install": "
         # GOPATH
         # respect USER value, if defined
         if ($env:GOPATH) { } else {
@@ -16,24 +16,24 @@
             env GOPATH $val
         }
         ",
-    "post_install": "ensure_in_path \"$env:GOPATH\\bin\" $global",
-    "bin": ["bin/go.exe", "bin/gofmt.exe", "bin/godoc.exe"],
-    "architecture": {
-        "64bit": {
-            "url": "https://storage.googleapis.com/golang/go1.11.2.windows-amd64.zip",
-            "hash": "sha256:086c59df0dce54d88f30edd50160393deceb27e73b8d6b46b9ee3f88b0c02e28"
-        },
-        "32bit": {
-            "url": "https://storage.googleapis.com/golang/go1.11.2.windows-386.zip",
-            "hash": "sha256:56dc82a16747be3b94213cd53a059437462437bc67a087552111324d3f64877a"
-        }
-    },
-    "checkver": "Build version go([\\d\\.]+)\\.",
-    "autoupdate": {
-        "architecture": {
-            "64bit": { "url": "https://storage.googleapis.com/golang/go$version.windows-amd64.zip" },
-            "32bit": { "url": "https://storage.googleapis.com/golang/go$version.windows-386.zip" }
-        },
-        "hash": { "url": "$url.sha256" }
-    }
+	"post_install": "ensure_in_path \"$env:GOPATH\\bin\" $global",
+	"bin": ["bin/go.exe", "bin/gofmt.exe", "bin/godoc.exe"],
+	"architecture": {
+		"64bit": {
+			"url": "https://storage.googleapis.com/golang/go1.11.2.windows-amd64.zip",
+			"hash": "sha256:086c59df0dce54d88f30edd50160393deceb27e73b8d6b46b9ee3f88b0c02e28"
+		},
+		"32bit": {
+			"url": "https://storage.googleapis.com/golang/go1.11.2.windows-386.zip",
+			"hash": "sha256:56dc82a16747be3b94213cd53a059437462437bc67a087552111324d3f64877a"
+		}
+	},
+	"checkver": "Build version go([\\d\\.]+)\\.",
+	"autoupdate": {
+		"architecture": {
+			"64bit": { "url": "https://storage.googleapis.com/golang/go$version.windows-amd64.zip" },
+			"32bit": { "url": "https://storage.googleapis.com/golang/go$version.windows-386.zip" }
+		},
+		"hash": { "url": "$url.sha256" }
+	}
 }
