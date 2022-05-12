@@ -10,14 +10,7 @@
 	//     "64bit": {
 	"url": [
 		"https://github.com/git-for-windows/git/releases/download/v2.31.1.windows.1/MinGit-2.31.1-busybox-64-bit.zip",
-		"http://repo.msys2.org/msys/x86_64/libiconv-1.16-2-x86_64.pkg.tar.zst",
-		"http://repo.msys2.org/msys/x86_64/liblz4-1.9.3-1-x86_64.pkg.tar.zst",
-		"http://repo.msys2.org/msys/x86_64/libxxhash-0.8.0-1-x86_64.pkg.tar.zst",
-		"http://repo.msys2.org/msys/x86_64/libzstd-1.5.0-1-x86_64.pkg.tar.zst",
-		"http://repo.msys2.org/msys/x86_64/openssh-8.5p1-1-x86_64.pkg.tar.zst",
-		"http://repo.msys2.org/msys/x86_64/rsync-3.2.3-1-x86_64.pkg.tar.zst"
-	],
-	"hash": [
+		"http://repo.msys2.org/msys/x86_64/libiconv-1.16-2-asd
 		"sha256:d97a2f116692e78266fbf10976183d57a4193868df1a94de7d40d371e358b6f3",
 		"sha256:4d23674f25e9d558295464b4f50689698f8ce240616410da9a4d9420b5130ced",
 		"sha256:6a6c458a206ded17e3ba2815686de2b555e413f843bfcbb405e2df019e49969f",
