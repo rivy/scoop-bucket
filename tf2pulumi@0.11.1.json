@@ -1,0 +1,14 @@
+{
+	"homepage": "https://github.com/pulumi/tf2pulumi",
+	"description": "Terraform HCL Converter for Pulumi",
+	"version": "0.11.1",
+	"license": "Apache License 2.0",
+	"url": "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.1/tf2pulumi-v0.11.1-windows-x64.zip",
+	"hash": "sha256:446ffbc8d0184b07b020963361a03d7abd02d82737c7f3e0a6e921a3ddef7d53",
+	"persist": ["cache", "mirror", "global"],
+	"post_install": [],
+	"bin": ["tf2pulumi.exe"],
+    "env_add_path": [
+		"library/bin"
+	]
+}
