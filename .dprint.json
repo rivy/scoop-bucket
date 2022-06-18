@@ -1,11 +1,28 @@
 {
-	// v2022.02.06 [rivy]
-	"$schema": "https://dprint.dev/schemas/v0.json",
-	"projectType": "openSource",
+	// `dprint` configuration; ref: <https://dprint.dev/config>; v2022.06.18 [rivy]
+	// * "$schema": "https://dprint.dev/schemas/v0.json",
+	// * "projectType": "openSource",
 	"incremental": true,
 	"indentWidth": 2,
 	"lineWidth": 100,
 	"useTabs": true,
+	//
+	"includes": ["**/*.{ts,tsx,js,jsx,cjs,cjx,mjs,mts,mtx,json,jsonc,md,mkd,rs,yaml,yml}"],
+	"excludes": [
+		".history",
+		".coverage",
+		".changelog/*.tpl.*",
+		"CHANGELOG{,.}*",
+		"**/node_modules",
+		"**/*-lock.json",
+		"**/target",
+		"**/vendor"
+	],
+	//
+	"json": { "preferSingleLine": true },
+	"markdown": { "textWrap": "always", "lineWidth": 99999 },
+	"prettier": { "printWidth": 100, "singleQuote": true, "tabWidth": 2 },
+	"rustfmt": { "hard_tabs": false, "tab_spaces": 4 },
 	"typescript": {
 		// ref: <https://dprint.dev/plugins/typescript/config>
 		"deno": true,
@@ -23,30 +40,16 @@
 		"module.sortImportDeclarations": "caseInsensitive",
 		"module.sortExportDeclarations": "caseInsensitive"
 	},
-	"json": { "preferSingleLine": true },
-	"markdown": { "textWrap": "always", "lineWidth": 99999 },
-	"prettier": { "printWidth": 100, "singleQuote": true, "tabWidth": 2 },
-	"rustfmt": {},
-	"includes": ["**/*.{ts,tsx,js,jsx,cjs,cjx,mjs,mts,mtx,json,jsonc,md,mkd,rs,yaml,yml}"],
-	"excludes": [
-		".history",
-		".coverage",
-		".changelog/*.tpl.*",
-		"CHANGELOG{,.}*",
-		"**/node_modules",
-		"**/*-lock.json",
-		"**/target",
-		"**/vendor"
-	],
+	//
 	"plugins": [
 		// ref: <https://plugins.dprint.dev>
-		"https://plugins.dprint.dev/typescript-0.59.0.wasm",
-		"https://plugins.dprint.dev/json-0.13.1.wasm",
-		"https://plugins.dprint.dev/markdown-0.11.2.wasm",
-		"https://plugins.dprint.dev/toml-0.5.2.wasm",
+		"https://plugins.dprint.dev/typescript-0.62.2.wasm",
+		"https://plugins.dprint.dev/json-0.14.1.wasm",
+		"https://plugins.dprint.dev/markdown-0.12.2.wasm",
+		"https://plugins.dprint.dev/toml-0.5.4.wasm",
 		// ref: <https://github.com/dprint/dprint-plugin-rustfmt/releases>
-		"https://plugins.dprint.dev/rustfmt-0.4.0.exe-plugin@c6bb223ef6e5e87580177f6461a0ab0554ac9ea6b54f78ea7ae8bf63b14f5bc2",
+		"https://plugins.dprint.dev/rustfmt-0.6.2.json@886c6f3161cf020c2d75160262b0f56d74a521e05cfb91ec4f956650c8ca76ca",
 		// ref: <https://github.com/dprint/dprint-plugin-prettier/releases>
-		"https://plugins.dprint.dev/prettier-0.3.0.exe-plugin@c6c227493e655717b5f3d9c811ba576c82f2b060317bb233c6ec014958fbee19"
+		"https://plugins.dprint.dev/prettier-0.9.0.json@76c20538ea4231b3daa9b62059f90ec144200cab5477b7e95b730cbb3ed48957"
 	]
 }
