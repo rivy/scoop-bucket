@@ -1,7 +1,7 @@
 {
 	"version": "1.22.0-multilib",
-	"homepage": "https://dlang.org/",
 	"description": "LDC is LLVM based D-language compiler",
+	"homepage": "https://dlang.org/",
 	"license": {
 		"identifier": "BSD-3-Clause,BSL-1.0,NCSA,MIT,GPL-2.0-or-later",
 		"url": "https://github.com/ldc-developers/ldc/blob/master/LICENSE"
