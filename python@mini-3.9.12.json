@@ -1,6 +1,7 @@
 {
 	"homepage": "https://conda.io/miniconda.html",
 	"homepage:core": "https://python.org",
+	"description": "Python (via `conda` package and environment management)",
 	"license": "BSD 3-Clause",
 	"version": "3.9.12",
 	"architecture": {
