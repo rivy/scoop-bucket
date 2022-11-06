@@ -5,15 +5,17 @@
 	"license": "MIT",
 	"architecture": {
 		"64bit": {
-			"url": "https://github.com/denoland/deno/releases/download/v1.7.0/deno-x86_64-pc-windows-msvc.zip",
-			"hash": "c6c4e8515b3b81634ff55988eb40d707bf694ee283a7578fd262b5e720b013a3"
+			"url": "https://github.com/denoland/deno/releases/download/v1.27.1/deno-x86_64-pc-windows-msvc.zip",
+			"hash": "sha256:e16db71a80613bc7080eccc09037a2f1dccc5ded14a728f44dee42061c2d9723"
 		}
 	},
+	"#:env_set": "* avoid annoying (bad UI/UX) update checks (added with v1.27+)",
+	"env_set": { "DENO_NO_UPDATE_CHECK": "1" },
 	"bin": "deno.exe",
-	"post_install": "
-        # update to latest version
-        & $dir\\deno upgrade
-        ",
+	"post_install": [
+		"# update to latest version",
+		"& $dir\\deno upgrade"
+	],
 	"checkver": { "github": "https://github.com/denoland/deno" },
 	"autoupdate": {
 		"architecture": {
