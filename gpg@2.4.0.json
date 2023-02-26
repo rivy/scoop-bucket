@@ -1,9 +1,10 @@
 {
 	"homepage": "https://gnupg.org",
-	"version": "2.3.8",
+	"version": "2.4.0",
 	"license": "GPLv3",
-	"url": ["https://files.gpg4win.org/gpg4win-4.0.4.exe#/dl.7z"],
-	"hash": ["sha256:a750608969a075f132da31f538231ac3a2d3538e3eec8e8603d1573284745d0e"],
+	"url": ["https://files.gpg4win.org/gpg4win-4.1.0.exe#/dl.7z"],
+	"hash": ["sha256:e0fddc840808eef9531f14a515f8b3b6c46511977f00569161129c1dee413b38"],
+	"##": "note: `gpa` is no longer included (last included in v2.3.8 [gpg4win v4.0.4])",
 	"bin": [
 		"GnuPG/bin/gpg.exe",
 		["GnuPG/bin/gpg.exe", "gpg2"],
@@ -12,7 +13,6 @@
 		"GnuPG/bin/gpgtar.exe",
 		"GnuPG/bin/gpgv.exe",
 		"GnuPG/bin/gpg-connect-agent.exe",
-		"bin/gpa.exe",
 		"bin/kleopatra.exe"
 	],
 	"pre_install": "
