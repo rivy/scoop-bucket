@@ -1,5 +1,5 @@
 {
-	"version": "busybox-1.37.0", // busybox v1.37.0-FRP-5181-g5c1a3b00e
+	"version": "busybox-1.37.0-FRP-5181-g5c1a3b00e",
 	"description": "BusyBox is a single binary that contains many common Unix tools",
 	"homepage": "https://frippery.org/busybox",
 	"license": "GPL-2.0-only",
