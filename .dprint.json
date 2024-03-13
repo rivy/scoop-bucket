@@ -1,5 +1,8 @@
 {
-	// `dprint` configuration; ref: <https://dprint.dev/config>; v2022.06.18 [rivy]
+	// `dprint` configuration; ref: <https://dprint.dev/config>
+	// v2024.03.06 [rivy]
+	// spell-checker:ignore () commitlint dprint remarkrc rustfmt (people) Rivy Ivy III * rivy
+	//
 	// * "$schema": "https://dprint.dev/schemas/v0.json",
 	// * "projectType": "openSource",
 	"incremental": true,
@@ -7,22 +10,45 @@
 	"lineWidth": 100,
 	"useTabs": true,
 	//
-	"includes": ["**/*.{ts,tsx,js,jsx,cjs,cjx,mjs,mts,mtx,json,jsonc,md,mkd,rs,yaml,yml}"],
+	// "includes": ["**/*.{ts,tsx,js,jsx,cjs,cjx,mjs,mts,mtx,json,jsonc,md,mkd,rs,yaml,yml}"],
 	"excludes": [
-		".history",
-		".coverage",
-		".changelog/*.tpl.*",
-		"CHANGELOG{,.}*",
+		// * build/coverage/dev artifacts
+		"{.,_,@,#,$}build",
+		"{.,_,@,#,$}coverage",
+		"build",
+		"coverage",
+		".nyc_output",
+		"CHANGELOG",
+		"CHANGELOG.*",
+		"dist",
+		"target",
+		// * format-sensitive files
+		".changelog/*.tpl",
+		".changelog/*.tpl{.,#}*",
+		// * third-party (or otherwise managed) files
 		"**/node_modules",
 		"**/*-lock.json",
-		"**/target",
-		"**/vendor"
+		".history",
+		".vscode",
+		"package.json",
+		"vendor"
 	],
 	//
+	"exec": {
+		"commands": [ // { /* example from dprint */ "command": "rustfmt --edition 2021 --config imports_granularity=item", "exts": ["rs"] }
+			{ "command": "rustfmt", "exts": ["rs"] }
+		]
+	},
 	"json": { "preferSingleLine": true },
 	"markdown": { "textWrap": "always", "lineWidth": 99999 },
-	"prettier": { "printWidth": 100, "singleQuote": true, "tabWidth": 2 },
-	"rustfmt": { "hard_tabs": false, "tab_spaces": 4 },
+	"prettier": {
+		"printWidth": 100,
+		"proseWrap": "preserve",
+		"singleQuote": true,
+		"tabWidth": 2,
+		"useTabs": true,
+		"associations": [".commitlint.config.js", ".eslintrc.js", ".prettierrc.js", ".remarkrc.js"]
+	},
 	"typescript": {
 		// ref: <https://dprint.dev/plugins/typescript/config>
 		"deno": true,
@@ -32,6 +58,7 @@
 		"lineWidth": 100,
 		"preferSingleLine": true,
 		"quoteStyle": "preferSingle",
+		"trailingCommas": "onlyMultiLine",
 		//
 		"ignoreNodeCommentText": "dprint-ignore", // from Deno's "deno-fmt-ignore"
 		"ignoreFileCommentText": "dprint-ignore-file", // from Deno's "deno-fmt-ignore-file"
@@ -43,13 +70,23 @@
 	//
 	"plugins": [
 		// ref: <https://plugins.dprint.dev>
-		"https://plugins.dprint.dev/typescript-0.62.2.wasm",
-		"https://plugins.dprint.dev/json-0.14.1.wasm",
-		"https://plugins.dprint.dev/markdown-0.12.2.wasm",
-		"https://plugins.dprint.dev/toml-0.5.4.wasm",
+		"https://plugins.dprint.dev/exec-0.4.4.json@c207bf9b9a4ee1f0ecb75c594f774924baf62e8e53a2ce9d873816a408cecbf7",
+		"https://plugins.dprint.dev/typescript-0.89.3.wasm",
+		"https://plugins.dprint.dev/json-0.19.2.wasm",
+		"https://plugins.dprint.dev/markdown-0.16.4.wasm",
+		"https://plugins.dprint.dev/toml-0.6.1.wasm",
+		"https://plugins.dprint.dev/dockerfile-0.3.0.wasm",
+		"https://plugins.dprint.dev/biome-0.3.2.wasm",
+		"https://plugins.dprint.dev/ruff-0.2.0.wasm",
+		"https://plugins.dprint.dev/jupyter-0.1.3.wasm",
 		// ref: <https://github.com/dprint/dprint-plugin-rustfmt/releases>
-		"https://plugins.dprint.dev/rustfmt-0.6.2.json@886c6f3161cf020c2d75160262b0f56d74a521e05cfb91ec4f956650c8ca76ca",
+		// "https://plugins.dprint.dev/rustfmt-0.6.1.exe-plugin@99b89a0599fd3a63e597e03436862157901f3facae2f0c2fbd0b9f656cdbc2a5",
+		// "https://plugins.dprint.dev/rustfmt-0.6.2.json@886c6f3161cf020c2d75160262b0f56d74a521e05cfb91ec4f956650c8ca76ca",
+		// * rustfmt plugin deprecated in favor of command for `exec` plugin (see <https://dprint.dev/plugins/rustfmt>, <https://github.com/dprint/dprint-plugin-exec#example---rustfmt>)
 		// ref: <https://github.com/dprint/dprint-plugin-prettier/releases>
-		"https://plugins.dprint.dev/prettier-0.9.0.json@76c20538ea4231b3daa9b62059f90ec144200cab5477b7e95b730cbb3ed48957"
+		// "https://plugins.dprint.dev/prettier-0.8.0.json@7229a9f8c7c07a0f2865f665728160c1a50f56d7a447117884fbd5fb803df90a"
+		// "https://plugins.dprint.dev/prettier-0.9.0.json@76c20538ea4231b3daa9b62059f90ec144200cab5477b7e95b730cbb3ed48957"
+		// "https://plugins.dprint.dev/prettier-0.10.0.json@ca9a97de84cbb2cd60534eb72c0455f3ca8704743917569ace70499136cf5c9c"
+		"https://plugins.dprint.dev/prettier-0.39.0.json@896b70f29ef8213c1b0ba81a93cee9c2d4f39ac2194040313cd433906db7bc7c"
 	]
 }
