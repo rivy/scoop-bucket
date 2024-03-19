@@ -1,5 +1,5 @@
 {
-	"version": "1.22.1",
+	"version": "1.20.14",
 	"description": "An open source programming language that makes it easy to build simple, reliable, and efficient software.",
 	"homepage": "https://golang.org",
 	"license": "BSD-3-Clause",
@@ -25,16 +25,16 @@
 	"bin": ["bin/go.exe", "bin/gofmt.exe"],
 	"architecture": {
 		"64bit": {
-			"url": "https://go.dev/dl/go1.22.1.windows-amd64.zip",
-			"hash": "sha256:cf9c66a208a106402a527f5b956269ca506cfe535fc388e828d249ea88ed28ba"
+			"url": "https://go.dev/dl/go1.20.14.windows-amd64.zip",
+			"hash": "sha256:0e0d0190406ead891d94ecf00f961bb5cfa15ddd47499d2649f12eee80aee110"
 		},
 		"32bit": {
-			"url": "https://go.dev/dl/go1.22.1.windows-386.zip",
-			"hash": "sha256:0c5ebb7eb39b7884ec99f92b425d4c03a96a72443562aafbf6e7d15c42a3108a"
+			"url": "https://go.dev/dl/go1.20.14.windows-386.zip",
+			"hash": "sha256:ceaa0e7a7c89604027d67bbcce72b8574080d5c34b68bd3152338402c9253ce2"
 		},
 		"arm64": {
-			"url": "https://go.dev/dl/go1.22.1.windows-arm64.zip",
-			"hash": "sha256:85b8511b298c9f4199ecae26afafcc3d46155bac934d43f2357b9224bcaa310f"
+			"url": "https://go.dev/dl/go1.20.14.windows-arm64.zip",
+			"hash": "sha256:67dfb9de6c4775d3deffb3bf87c204f22b2d0ddebebc6eec5917a69e27af7370"
 		}
 	},
 	"checkver": { "url": "https://golang.org/dl/", "regex": "go([\\d.]+)\\.windows-" },
