@@ -4,11 +4,11 @@
 	"homepage:core": "https://python.org",
 	"description": "Python (via `conda` package and environment management)",
 	"license": "BSD 3-Clause",
-	"version": "3.11.5",
+	"version": "3.12.1",
 	"architecture": {
 		"64bit": {
-			"url": "https://repo.anaconda.com/miniconda/Miniconda3-py311_23.5.2-0-Windows-x86_64.exe",
-			"hash": "sha256:00e8370542836862d4c790aa8966f1d7344a8addd4b766004febcb23f40e2914"
+			"url": "https://repo.anaconda.com/miniconda/Miniconda3-py312_24.1.2-0-Windows-x86_64.exe",
+			"hash": "sha256:ff53a36b7024f8398cbfd043020f1f662cd4c5c2095c0007ddb4348aa5459375"
 		}
 	},
 	"installer": {
