@@ -1,24 +1,24 @@
 {
-	"version": "18.1.8",
+	"version": "19.1.7",
 	"description": "Collection of modular and reusable compiler and toolchain technologies.",
 	"homepage": "https://www.llvm.org",
 	"license": "NCSA",
 	"architecture": {
 		"64bit": {
 			"//url-note": "using 'dev' compilation with extended tools for llvm-config.exe, etc. ; ref: <https://github.com/llvm/llvm-project/issues/53052>",
-			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-x86_64-pc-windows-msvc.tar.xz", 
-			"hash": "sha256:22c5907db053026cc2a8ff96d21c0f642a90d24d66c23c6d28ee7b1d572b82e8",
-			"extract_dir": "clang+llvm-18.1.8-x86_64-pc-windows-msvc",
-			"//url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.6/LLVM-18.1.6-win64.exe#/dl.7z",
-			"//hash": "sha256:e4cf89db2f4ce3aa8f661891faa59f4961b1e12df0217c9a88d20de9ca2fe25e"
+			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/clang+llvm-19.1.7-x86_64-pc-windows-msvc.tar.xz",
+			"hash": "sha256:b4557b4f012161f56a2f5d9e877ab9635cafd7a08f7affe14829bd60c9d357f0",
+			"extract_dir": "clang+llvm-19.1.7-x86_64-pc-windows-msvc",
+			"//url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/LLVM-19.1.7-win64.exe#/dl.7z",
+			"//hash": "sha256:f19ae5bc4823ac69ec01dc2ded503ec80a04ad2208dda1595d1f0413c148ef90"
 		},
 		"32bit": {
-			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.6/LLVM-18.1.6-win32.exe#/dl.7z",
-			"hash": "sha256:2796d2f72c7f77ae3ca2abc24ee45ce70286a8b477db40f4bb62e70111a7713f"
+			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/LLVM-19.1.7-win32.exe#/dl.7z",
+			"hash": "sha256:3d7044fa307d3183e4ee2a98e12dd0523ced58f1d1c95c5e057694fb75beb51a"
 		},
 		"arm64": {
-			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.6/LLVM-18.1.6-woa64.exe#/dl.7z",
-			"hash": "sha256:8519417fc57a1bc9ae7292a9bdde56c06b7b9505aa3a19fc75327aa3d91095df"
+			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/LLVM-19.1.7-woa64.exe#/dl.7z",
+			"hash": "sha256:08d871c9a20caf0987ede1a4e44d489e28854c9f2fff3da98b486891f4856e05"
 		}
 	},
 	"pre_install": "Remove-Item \"$dir\\`$*\" -Recurse",

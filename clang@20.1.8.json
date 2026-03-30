@@ -1,24 +1,24 @@
 {
-	"version": "18.1.8",
+	"version": "20.1.8",
 	"description": "Collection of modular and reusable compiler and toolchain technologies.",
 	"homepage": "https://www.llvm.org",
 	"license": "NCSA",
 	"architecture": {
 		"64bit": {
 			"//url-note": "using 'dev' compilation with extended tools for llvm-config.exe, etc. ; ref: <https://github.com/llvm/llvm-project/issues/53052>",
-			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-x86_64-pc-windows-msvc.tar.xz", 
-			"hash": "sha256:22c5907db053026cc2a8ff96d21c0f642a90d24d66c23c6d28ee7b1d572b82e8",
-			"extract_dir": "clang+llvm-18.1.8-x86_64-pc-windows-msvc",
-			"//url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.6/LLVM-18.1.6-win64.exe#/dl.7z",
-			"//hash": "sha256:e4cf89db2f4ce3aa8f661891faa59f4961b1e12df0217c9a88d20de9ca2fe25e"
+			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/clang+llvm-20.1.8-x86_64-pc-windows-msvc.tar.xz",
+			"hash": "sha256:f229769f11d6a6edc8ada599c0cda964b7dee6ab1a08c6cf9dd7f513e85b107f",
+			"extract_dir": "clang+llvm-20.1.8-x86_64-pc-windows-msvc",
+			"//url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/LLVM-20.1.8-win64.exe#/dl.7z",
+			"//hash": "sha256:3197846a2b19063687dd56e93e34cd941e3548d907f23a6131571321bdf9fe7b"
 		},
 		"32bit": {
-			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.6/LLVM-18.1.6-win32.exe#/dl.7z",
-			"hash": "sha256:2796d2f72c7f77ae3ca2abc24ee45ce70286a8b477db40f4bb62e70111a7713f"
+			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/LLVM-20.1.8-win32.exe#/dl.7z",
+			"hash": "sha256:430b5c04252c9ff195a8993ae1c2ff2b73a14f42067f44cfe8f6db73232313cd"
 		},
 		"arm64": {
-			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.6/LLVM-18.1.6-woa64.exe#/dl.7z",
-			"hash": "sha256:8519417fc57a1bc9ae7292a9bdde56c06b7b9505aa3a19fc75327aa3d91095df"
+			"url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/LLVM-20.1.8-woa64.exe#/dl.7z",
+			"hash": "sha256:7c4ac97eb2ae6b960ca5f9caf3ff6124c8d2a18cc07a7840a4d2ea15537bad8e"
 		}
 	},
 	"pre_install": "Remove-Item \"$dir\\`$*\" -Recurse",
